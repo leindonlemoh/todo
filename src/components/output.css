@@ -1,0 +1,14 @@
+.container-output {
+  display: flex;
+  flex-direction: row;
+}
+.todo-text {
+  text-align: left;
+  left: 0;
+  width: 100%;
+  margin-left: 5px;
+}
+.close {
+  display: flex;
+  width: 100%;
+}
