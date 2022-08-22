@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { CssBaseline, Button, Grid, Paper, TextField } from "@mui/material";
 import ThoughtsItem from "./ThoughtsItem";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import "./thoughts.css";
 
 // Color Theme
 const customTheme = createTheme({
@@ -22,6 +23,11 @@ const ThoughtsForm = () => {
   const dateRef = useRef();
   const thoughtsRef = useRef();
   let dateToday = document.getElementById("date");
+
+  //
+
+  //
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     let id = 1;
@@ -40,7 +46,7 @@ const ThoughtsForm = () => {
     let date = `${
       today.getMonth() + 1
     } / ${today.getDate()} / ${today.getFullYear()}`;
-    dateToday.textContent = date;
+
     dateToday.value = date;
     console.log(date);
   };
@@ -50,26 +56,25 @@ const ThoughtsForm = () => {
       <CssBaseline />
       <ThemeProvider theme={customTheme}>
         <Paper
+          className="thoughts-form"
           variant="outlined"
           component="form"
-          sx={{
-            my: 6,
-            p: 3,
-          }}
           onSubmit={onFormSubmit}
         >
           Thoughts for the Day
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 id="date"
                 name="date"
                 variant="standard"
                 fullWidth
+                placeholder="Date"
                 inputRef={dateRef}
+                className="date"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="input-th">
               <TextField
                 required
                 id="thoughts"

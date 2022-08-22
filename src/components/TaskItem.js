@@ -7,6 +7,7 @@ import {
   Paper,
   TextField,
   Box,
+  Typography,
 } from "@mui/material";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import "./output.css";
@@ -36,10 +37,12 @@ const TaskItem = (props) => {
         <Grid item className="container-output">
           <div className="todo-text">{props.todo.text}</div>
           <div className="delete">
-            <AiOutlineCloseCircle
-              className="close"
-              onClick={() => removeTodo(props.todo.id)}
-            />
+            <Typography paragraph>
+              <AiOutlineCloseCircle
+                className="close"
+                onClick={() => removeTodo(props.todo.id)}
+              />
+            </Typography>
           </div>
         </Grid>
       </Grid>
